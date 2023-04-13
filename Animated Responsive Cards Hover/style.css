@@ -1,0 +1,95 @@
+/*css歸零*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /*linear-gradient 漸層(to 目標方向，起始色彩，結束色彩)*/
+    background: linear-gradient(45deg,#00bcd4,#ffeb3b);
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /*gap 定義網格行與列之間距離(上下 左右)*/
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+.container .card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 300px;
+    width: 350px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, .15);
+    transition: 0.5s;
+}
+.container .card:hover{
+    height: 500px;
+}
+.container .card .imgbx{
+    position: absolute;
+    top: 20px;
+    height: 200px;
+    width: 300px;
+    background: #333;
+    border-radius: 10px;
+    /*圖片超出隱藏*/
+    overflow: hidden;
+    transition: 0.5s;
+}
+.container .card:hover .imgbx{
+    top: -100px;
+    /*縮放*/
+    scale: 0.9;
+    /*box-shadow: 水平位移 垂直位移 陰影半徑 */
+    box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+}
+.container .card .imgbx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.container .card .content{
+    position: absolute;
+    top: 230px;
+    width: 100%;
+    padding: 0px 30px;
+    height: 30px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.5s;
+}
+.container .card:hover .content{
+     height: 250px;
+     top:   150px
+}
+.container .card .content h2{
+    font-size: 1.5em;
+    color: var(--clr);
+}
+.container .card .content p{
+    font-size: 1.05em;
+    color: #333;
+}
+.container .card .content a{
+  position: relative;
+  top: 15px;
+  display: inline-block;
+  padding: 12px 25px;
+  background: var(--clr);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+}
